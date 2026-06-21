@@ -32,8 +32,8 @@ for letter in letters:
 	# page = rq.get(page_url, headers=headers)
 	# soup = bs(page.text, 'html.parser')
 
-	# So then I just went through and saved all 26 files locally as A.html, B.html, etc
-	with open("scrape/{}.html".format(letter)) as fp:
+	# So then I just went through and saved all 26 files locally
+	with open("scrape/player_ind_{}.html".format(letter)) as fp:
 	    soup = bs(fp, 'html.parser')
 	
 	# First get the name from each table row and split that name by spaces
@@ -67,7 +67,7 @@ for letter in letters:
 			last_name_last_pieces.append(the_name.upper())
 
 
-# Now we have huge lists of name chunks.
+# Now we have four huge lists of name chunks.
 # Convert them to sets to remove duplicates, then convert them back.
 first_name_first_pieces = list(set(first_name_first_pieces))
 first_name_last_pieces = list(set(first_name_last_pieces))

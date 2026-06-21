@@ -29,23 +29,24 @@ for i in range(0,20):
 			# Some players have a first name with three pieces.
 			name = '{}{}{} '.format(first_name_first_pieces.pop(), first_name_first_pieces.pop(), first_name_last_pieces.pop()).capitalize()
 		else:
-			# Most players have a first name with two syllables.
+			# Most players have a first name with two pieces.
 			name = '{}{} '.format(first_name_first_pieces.pop(), first_name_last_pieces.pop()).capitalize()
 	
 		nickname_chance = random.randint(0,100)
 		# Some players have nicknames.
 		if nickname_chance > 92:
 			name += '"{}" '.format(first_name_first_pieces.pop().capitalize())
-		elif nickname_chance > 84 and nickname_chance <= 92:
+		elif nickname_chance > 84:
 			name += '"{}" '.format(first_name_last_pieces.pop().capitalize())
 			
 		if random.randint(0,100) > 90:
 			# Some players have a last name with three pieces.
 			name += '{}{}{}'.format(last_name_first_pieces.pop(), last_name_first_pieces.pop(), last_name_last_pieces.pop()).capitalize()
 		else:
-			# Most players have a first name with two syllables.
+			# Most players have a first name with two pieces.
 			name += '{}{}'.format(last_name_first_pieces.pop(), last_name_last_pieces.pop()).capitalize()
 			
+		# No accidental slurs please.
 		if wordfilter.blacklisted(name):
 			name = ''
 			

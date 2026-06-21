@@ -19,3 +19,6 @@ Parenic Bremgworth
 Ollimer Labranyshyn
 Vale Dingrou
 ```
+
+# That's all
+You can see a new list of names every hour [on my tilde.club page](https://tilde.club/~brendn/players.html).
